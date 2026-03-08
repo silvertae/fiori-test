@@ -59,11 +59,35 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
+        "sap.ui.unified": {},
         "sap.ushell": {},
         "sap.f": {},
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.suite.ui.generic.template": {}
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "controllerName": "com.blueward.sample.fioritest.ext.controller.ListReportExt",
+            "sap.ui.generic.app": {
+              "A_Customer": {
+                "EntitySet": "A_Customer",
+                "Actions": {
+                  "ExcelUpload": {
+                    "id": "ExcelUpload",
+                    "text": "{{excelUploadAction}}",
+                    "press": "onOpenExcelUploadDialog",
+                    "global": false,
+                    "requiresSelection": false
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "contentDensities": {

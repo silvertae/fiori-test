@@ -1,0 +1,71 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:unified="sap.ui.unified"
+>
+  <Dialog
+    id="excelUploadDialog"
+    title="{i18n>excelUploadDialogTitle}"
+    contentWidth="72rem"
+    contentHeight="36rem"
+    horizontalScrolling="false"
+    verticalScrolling="false"
+    afterClose=".onExcelUploadDialogAfterClose"
+  >
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Text text="{i18n>excelUploadDialogInstruction}" />
+        <unified:FileUploader
+          id="excelFileUploader"
+          class="sapUiSmallMarginTop"
+          width="100%"
+          fileType="xlsx"
+          multiple="false"
+          sameFilenameAllowed="true"
+          change=".onExcelFileChange"
+          buttonText="{i18n>excelUploadSelectButton}"
+          placeholder="{i18n>excelUploadPlaceholder}"
+        />
+        <MessageStrip
+          class="sapUiSmallMarginTop"
+          text="{excelUpload>/errorText}"
+          type="Error"
+          showIcon="true"
+          visible="{excelUpload>/hasErrors}"
+        />
+        <ObjectStatus
+          class="sapUiSmallMarginTop"
+          text="{= ${excelUpload>/shownRows} > 0 ? ${i18n>excelUploadPreviewStatus} + ': ' + ${excelUpload>/sheetName} + ' (' + ${excelUpload>/shownRows} + '/' + ${excelUpload>/totalRows} + ')' : '' }"
+          visible="{= ${excelUpload>/shownRows} > 0 }"
+          state="Information"
+        />
+        <ScrollContainer
+          class="sapUiSmallMarginTop"
+          height="24rem"
+          width="100%"
+          vertical="true"
+          horizontal="true"
+        >
+          <Table
+            id="excelPreviewTable"
+            width="100%"
+            inset="false"
+            sticky="ColumnHeaders"
+            noDataText="{i18n>excelUploadNoPreview}"
+          />
+        </ScrollContainer>
+      </VBox>
+    </content>
+    <beginButton>
+      <Button
+        text="{i18n>excelUploadConfirmButton}"
+        type="Emphasized"
+        enabled="{excelUpload>/canConfirm}"
+        press=".onConfirmExcelUpload"
+      />
+    </beginButton>
+    <endButton>
+      <Button text="{i18n>excelUploadCancelButton}" press=".onCloseExcelUploadDialog" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

@@ -4,6 +4,10 @@ specVersion: "4.0"
 metadata:
   name: com.blueward.sample.fioritest
 type: application
+builder:
+  componentPreload:
+    excludes:
+      - com/blueward/sample/fioritest/thirdparty/xlsx.full.min.js
 server:
   customMiddleware:
     - name: fiori-tools-proxy

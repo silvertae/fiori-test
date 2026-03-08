@@ -8,6 +8,9 @@ resources:
   configuration:
     propertiesFileSourceEncoding: UTF-8
 builder:
+  componentPreload:
+    excludes:
+      - com/blueward/sample/fioritest/thirdparty/xlsx.full.min.js
   resources:
     excludes:
       - /test/**
