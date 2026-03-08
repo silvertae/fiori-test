@@ -16,7 +16,7 @@ server:
             - /test-resources
           url: https://ui5.sap.com
         backend:
-          - path: /here
+          - path: /s4hanacloud
             url: http://localhost
     - name: fiori-tools-appreload
       afterMiddleware: compression
@@ -38,7 +38,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /here/goes/your/serviceurl
+          - urlPath: /s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/
             metadataPath: ./webapp/localService/mainService/metadata.xml
             mockdataPath: ./webapp/localService/mainService/data
             generateMockData: true

@@ -24,7 +24,7 @@
         }
       },
       "mainService": {
-        "uri": "/here/goes/your/serviceurl/",
+        "uri": "/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
         "type": "OData",
         "settings": {
           "annotations": [
