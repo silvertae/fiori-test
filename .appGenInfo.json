@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Sun Mar 08 2026 15:14:57 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "File",
+    "metadataFilename": "API_BUSINESS_PARTNER.edmx",
+    "serviceUrl": "/here/goes/your/serviceurl/",
+    "appName": "fiori-test",
+    "appTitle": "BP Fiori App",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "com.blueward.sample",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.136.11",
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.20.4",
+    "template": "List Report Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "A_Customer"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "to_CustomerCompany"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

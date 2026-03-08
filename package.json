@@ -1,0 +1,35 @@
+{
+  "name": "fiori-test",
+  "version": "0.0.1",
+  "description": "An SAP Fiori application.",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "main": "webapp/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "@ui5/cli": "^4.0.33",
+    "@sap/ux-ui5-tooling": "1",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2",
+    "ui5-task-zipper": "^3.4.x",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.29"
+  },
+  "scripts": {
+    "start": "echo \\\"This application was generated with a local metadata file and does not reference a live server. Please add the required server configuration or start this application with mock data using the target: `npm run start-mock`.\\\"",
+    "start-local": "fiori run --config ./ui5-local.yaml --open \"/test/flpSandbox.html?sap-ui-xx-viewCache=false#combluewardsamplefioritest-tile\"",
+    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
+    "start-mock": "fiori run --config ./ui5-mock.yaml --open \"/test/flpSandbox.html?sap-ui-xx-viewCache=false#combluewardsamplefioritest-tile\"",
+    "deploy": "fiori cfDeploy",
+    "deploy-config": "fiori add deploy-config",
+    "start-noflp": "echo \\\"This application was generated with a local metadata file and does not reference a live server. Please add the required server configuration or start this application with mock data using the target: `npm run start-mock`.\\\"",
+    "start-variants-management": "echo \\\"This application was generated with a local metadata file and does not reference a live server. Please add the required server configuration or start this application with mock data using the target: `npm run start-mock`.\\\"",
+    "build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo",
+    "build:mta": "rimraf resources mta_archives && mbt build",
+    "undeploy": "cf undeploy combluewardsamplefioritest --delete-services --delete-service-keys --delete-service-brokers"
+  },
+  "sapuxLayer": "CUSTOMER_BASE",
+  "sapux": true
+}
